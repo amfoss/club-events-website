@@ -10,7 +10,7 @@ const Header = () => (
       <div className="col-lg-3">
         <img src={MLHLogo} />
       </div>
-      <div className="col-lg-9">
+      <div className="col-lg-9 d-flex justify-content-end align-items-center">
         <div id="menu">
           <a href="/schedule">Schedule</a>
           <a href="/schedule">Schedule</a>

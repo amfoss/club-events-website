@@ -6,6 +6,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 import Header from "../events/mlh-hack-day/components/header"
+import Footer from "../events/mlh-hack-day/components/footer"
+
 import Section from "../events/mlh-hack-day/components/section"
 
 import '../events/mlh-hack-day/styles/style.sass'
@@ -37,7 +39,29 @@ const mlhPage = () => (
                 </p>
               </>
             }
+            counters={[
+                  {
+                    text: 'continent',
+                    value: 7,
+                  },
+                  {
+                    text: 'countries',
+                    value: 50,
+                    plus: true
+                  },
+                  {
+                    text: 'location',
+                    value: 300,
+                    plus: true
+                  },
+                  {
+                    text: 'attendees',
+                    value: 10000,
+                    plus: true
+                  },
+              ]}
         />
+        <Footer />
   </Layout>
 )
 
