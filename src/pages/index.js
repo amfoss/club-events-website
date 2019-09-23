@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="MLH Local Hack Day" />
-    <h1>MLH Local Hack Day</h1>
+    <SEO title="Events" />
+    <h1>amFOSS Events</h1>
   </Layout>
 )
 
