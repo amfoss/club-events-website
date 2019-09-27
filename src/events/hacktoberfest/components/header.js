@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import hacktoberfest19logo from "../images/hacktoberfest19.png"
-import hacktoberfest19Art from "../images/hacktoberfest_art_1.png"
+import hacktoberfest19Art1 from "../images/hacktoberfest_art_1.png"
+import hacktoberfest19Art2 from "../images/hacktoberfest_art_2.png"
 import amFOSSLogo from "../../../images/amfoss_logo.png"
 import amritaLogo from "../../../images/amrita_logo.png"
 
@@ -73,10 +74,11 @@ const Header = () => {
           <img className="amritaLogo" src={amritaLogo}/>
         </div>
       </div>
-      <img src={hacktoberfest19Art} id="header-art"/>
-      <div className="d-flex align-items-center justify-content-center">
-          <div className="row m-0 p-4 w-100">
-            <div className="col-xl-8 col-lg-6">
+      <img src={hacktoberfest19Art1} id="header-art-1"/>
+      <img src={hacktoberfest19Art2} id="header-art-2"/>
+      <div className="header-title d-flex align-items-center justify-content-center">
+          <div className="row m-0 w-100">
+            <div className="col-xl-8 col-lg-6 text-center p-0">
               <img className="hacktoberLogo" src={hacktoberfest19logo} />
             </div>
             <div className="col">
