@@ -3,10 +3,12 @@ import './styles/style.sass'
 
 import Header from './components/header'
 import Map from './components/map'
+import SEO from "../../components/seo"
 
 const Hacktoberfest = () => {
   return(
     <>
+      <SEO title="Hacktoberfest" />
       <Header/>
       <Map/>
       <div>

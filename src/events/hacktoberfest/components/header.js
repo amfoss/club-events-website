@@ -89,9 +89,7 @@ const Header = () => {
                   <div>
                     <h1>Amritapuri</h1>
                     <h3>October 3, 3PM - 9PM</h3>
-                    <div className="d-flex align-items-center text-lg-left text-center justify-content-center h-100">
-                      <button className="button"><a href="https://docs.google.com/forms/d/1FgFeyDloIsNwnGdHH8DfEYtk15bAp_W6RV1nst8dExY/edit?usp=sharing" style={{color: 'black', textDecoration: 'none'}}>Register Now</a></button>
-                    </div>
+                    <button className="button"><a href="https://docs.google.com/forms/d/1FgFeyDloIsNwnGdHH8DfEYtk15bAp_W6RV1nst8dExY/edit?usp=sharing" style={{color: 'black', textDecoration: 'none'}}>REGISTER NOW</a></button>
                   </div>
                 </div>
             </div>
