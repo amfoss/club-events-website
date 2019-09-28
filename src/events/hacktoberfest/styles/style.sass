@@ -33,9 +33,9 @@ h1, h2, h3, h4, h5
   width: 100%
 
 #header-area
-  height: 75vw
+  min-height: 75vw
   max-height: 900px
-  min-height: 100vh
+  padding: 5vh 0
   .hacktoberLogo
     max-width: 100vmin
     padding-top: 10vh
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5
 
 
 #counter
-  min-height: 30vh
+  min-height: 50vh
   .countdown
     font-size: 10vh
     color: yellow
@@ -109,12 +109,20 @@ h1, h2, h3, h4, h5
 
 #registration-form
 
-  .color-white
-    color: white!important
-
   form
-    input
+    .form-control
       border-radius: 0
       border: 2px solid white
       background: none
       color: white
+      appearance: none
+    .form-check-input
+      background: none
+      width: 1rem!important
+      height: 1rem!important
+      border: none
+    .form-check-label
+      font-size: 80%
+      color: #eee
+      a
+        color: white
