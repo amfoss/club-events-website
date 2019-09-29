@@ -8,12 +8,11 @@ import Countdown from "./components/countdown"
 import Registration from "./components/registration"
 
 const Hacktoberfest = () => {
-  const [deadline , setDeadline] = useState('October 3, 2019')
   return(
     <>
       <SEO title="Hacktoberfest" />
       <Header/>
-      <Countdown deadline={deadline}/>
+      <Countdown deadline='October 3, 2019'/>
       <Map/>
       <Registration />
       <div>

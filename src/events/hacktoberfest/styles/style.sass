@@ -1,10 +1,9 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Hind&display=swap')
-
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap')
 body
   background: #152347!important
   min-height: 100vh
+  font-family: 'Raleway', sans-serif!important
 
 section
   background: #152347
@@ -28,14 +27,9 @@ h1, h2, h3, h4, h5
 .particleBg
   position: absolute
 
-#top-bar
-  position: absolute
-  width: 100%
-
 #header-area
-  min-height: 75vw
-  max-height: 900px
-  padding: 5vh 0
+  min-height: 75vh
+  padding: 2vh 2vw
   .hacktoberLogo
     max-width: 100vmin
     padding-top: 10vh
@@ -83,9 +77,9 @@ h1, h2, h3, h4, h5
 
 .button
   background-color: #ffc107
-  margin-top: 5px
-  padding: 10px
-  font-weight: 500
+  margin-top: 0.5rem
+  padding: 1rem 1.5rem
+  font-weight: 900
   color: #000
   text-align: center
   vertical-align: middle
@@ -98,17 +92,21 @@ h1, h2, h3, h4, h5
 
 #counter
   min-height: 50vh
-  .countdown
-    font-size: 10vh
+  line-height: 1
+  .part
+    font-size: calc(1.5rem + 5vw)
     color: yellow
-    font-family: 'Hind', serif
+    text-align: center
 
-    .color
+    span
+      display: block
+      margin-top: 0.5rem
+      font-family: 'Playfair Display', serif
+      font-size: calc(1rem + 2.5vw)
       color: white
-      font-size: 7vh
+      padding: 0 1rem
 
 #registration-form
-
   form
     .form-control
       border-radius: 0
@@ -118,11 +116,14 @@ h1, h2, h3, h4, h5
       appearance: none
     .form-check-input
       background: none
-      width: 1rem!important
-      height: 1rem!important
+      width: 1.2rem!important
+      height: 1.2rem!important
       border: none
+      margin: 0
     .form-check-label
       font-size: 80%
       color: #eee
       a
         color: white
+    option
+      color: black

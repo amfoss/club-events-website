@@ -41,12 +41,25 @@ class Countdown extends Component {
 
   render() {
     return(
-      <section id="counter">
-        <div className="d-flex align-items-center text-lg-left text-center justify-content-center h-100">
-          <div className="countdown">
-            {this.leading(this.state.days)} <span className="color">Days</span> {this.leading(this.state.hours)} <span className="color">Hours</span> {this.leading(this.state.minutes)} <span className="color">Minutes</span> {this.leading(this.state.seconds)} <span className="color">Seconds</span>
+      <section id="counter" className="d-flex align-items-center">
+          <div className="row m-0 w-100">
+            <div className="part p-4 col-6 col-md-3">
+              {this.leading(this.state.days)}
+              <span>Days</span>
+            </div>
+            <div className="part p-4 col-6 col-md-3">
+              {this.leading(this.state.hours)}
+              <span>Hours</span>
+            </div>
+            <div className="part p-4 col-6 col-md-3">
+              {this.leading(this.state.minutes)}
+              <span>Minutes</span>
+            </div>
+            <div className="part p-4 col-6 col-md-3">
+              {this.leading(this.state.seconds)}
+              <span>Seconds</span>
+            </div>
           </div>
-        </div>
       </section>
     );
   }

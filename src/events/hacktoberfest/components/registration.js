@@ -54,14 +54,14 @@ class Registration extends React.Component {
     const { name, email, phone, gender, roll } = this.state;
     const emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     const phoneRegex = /^\d{10}$/;
-    const rollRegex = /^AM.EN.U4[CSE\,CAI\,ECE\,EEE\,ELC\,MEC][10-20]$/;
+    const rollRegex = /^AM[.]EN[.]U4(CSE|CAI|ECE|EOC|EIC|EEE)[1][6-9][\d][\d][\d]$/;
     if( name === "" || roll === "" || phone === "" || email === "" || gender === "") {
       console.log("Please Fill All the Fields")
     } else if(emailRegex.test(email) === false) {
       console.log("Enter Proper Email")
     } else if(phoneRegex.test(phone) === false) {
        console.log("Enter Proper Phone")
-    }else if(rollRegex.test(roll) === false){
+    }else if(rollRegex.test(roll.toUpperCase()) === false){
       console.log("Enter Proper Amrita Roll Number ")
     } else {
       const json = { 'gender': gender, "rollNo": roll }
@@ -110,29 +110,45 @@ class Registration extends React.Component {
                 </div>
                 <div className="col-sm-6 p-0">
                   <div className="m-2">
-                    <select className="form-control text-light" onChange={this.handleGenderChange}>
-                      <option value="" selected disabled hidden> Select Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
+                    <select placeholder="Select Gender" className="form-control text-light" onChange={this.handleGenderChange}>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
                     </select>
                   </div>
                 </div>
                 <div className="col-sm-6 p-0">
                   <div className="m-2">
-                    <div className="g-recaptcha" data-sitekey="6LcI6boUAAAAAGJR_Ay6CqVGFRhv1s5B4GgIUtjD" data-theme="light"/>
+                    <div
+                        className="g-recaptcha"
+                        data-sitekey="6Lem6roUAAAAAOfyK_Ag-FFGMD-IgSEg9qHfsb51"
+                        data-theme="dark"
+                    />
                   </div>
                 </div>
                 <div className="col-12 form-check">
-                  <div className="m-2 text-light">
-                    <input type="checkbox" className="form-check-input" id="undertaking" />
-                    <label className="form-check-label" htmlFor="undertaking">
-                      By submitting this application, I agree to the <a href="#">Code of Conduct</a> & <a href="#">Privacy Policy</a> of the organizers.
-                    </label>
+                  <div className="m-2 text-light d-flex justify-content-center">
+                    <div className="row m-0">
+                      <div className="col-sm-1 col-2 d-flex justify-content-center align-items-center">
+                        <input type="checkbox" className="form-check-input" id="undertaking" />
+                      </div>
+                      <div className="col">
+                        <label className="form-check-label" htmlFor="undertaking">
+                          By submitting this application, I agree to the
+                          <a href="#">Code of Conduct</a> & <a href="#">Privacy Policy</a>
+                          of the organizers.
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="col-12 p-0 text-center text-md-right">
                   <div className="m-2">
-                    <button type="submit" className="button btn-block px-4">Register</button>
+                    <button
+                      type="submit"
+                      className="button btn-block px-4"
+                    >
+                      REGISTER
+                    </button>
                   </div>
                 </div>
               </div>
