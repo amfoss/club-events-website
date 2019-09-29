@@ -8,6 +8,7 @@
     "gatsby-plugin-manifest": "^2.2.18",
     "gatsby-plugin-offline": "^3.0.8",
     "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-recaptcha": "^1.0.5",
     "gatsby-plugin-sass": "^2.1.15",
     "gatsby-plugin-sharp": "^2.2.25",
     "gatsby-source-filesystem": "^2.1.26",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "prettier": "^1.18.2",
+    "react-recaptcha-google": "^1.1.1",
     "universal-cookie": "^4.0.2"
   },
   "keywords": [

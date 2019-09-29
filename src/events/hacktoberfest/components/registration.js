@@ -54,12 +54,15 @@ class Registration extends React.Component {
     const { name, email, phone, gender, roll } = this.state;
     const emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     const phoneRegex = /^\d{10}$/;
+    const rollRegex = /^AM.EN.U4[CSE\,CAI\,ECE\,EEE\,ELC\,MEC][10-20]$/;
     if( name === "" || roll === "" || phone === "" || email === "" || gender === "") {
       console.log("Please Fill All the Fields")
     } else if(emailRegex.test(email) === false) {
       console.log("Enter Proper Email")
     } else if(phoneRegex.test(phone) === false) {
        console.log("Enter Proper Phone")
+    }else if(rollRegex.test(roll) === false){
+      console.log("Enter Proper Amrita Roll Number ")
     } else {
       const json = { 'gender': gender, "rollNo": roll }
       const variables = { name, email, phone, formData: JSON.stringify(json) }
@@ -108,10 +111,15 @@ class Registration extends React.Component {
                 <div className="col-sm-6 p-0">
                   <div className="m-2">
                     <select className="form-control text-light" onChange={this.handleGenderChange}>
-                      <option value="" selected disabled hidden>Gender</option>
+                      <option value="" selected disabled hidden> Select Gender</option>
                       <option>Male</option>
                       <option>Female</option>
                     </select>
+                  </div>
+                </div>
+                <div className="col-sm-6 p-0">
+                  <div className="m-2">
+                    <div className="g-recaptcha" data-sitekey="6LcI6boUAAAAAGJR_Ay6CqVGFRhv1s5B4GgIUtjD" data-theme="light"/>
                   </div>
                 </div>
                 <div className="col-12 form-check">
