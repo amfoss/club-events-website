@@ -10,7 +10,7 @@ const Map = () => {
             id="location-map"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2555.517282504074!2d76.49219936127913!3d9.093913377090402!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc224ac2f7bde6dd!2sFOSS%40Amrita!5e0!3m2!1sen!2sin!4v1569567196585!5m2!1sen!2sin"
             frameBorder="0"
-            allowFullScreen="false"
+            allowFullScreen={false}
           >
           </iframe>
         </div>

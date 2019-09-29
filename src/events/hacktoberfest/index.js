@@ -10,7 +10,7 @@ import Registration from "./components/registration"
 const Hacktoberfest = () => {
   return(
     <>
-      <SEO title="Hacktoberfest" />
+      <SEO title="Hacktoberfest 2019 - Meetup | October 3" />
       <Header/>
       <Countdown deadline='October 3, 2019'/>
       <Map/>
