@@ -16,6 +16,13 @@ const query=`
   }
 }
 `;
+const regquery = `
+{
+  registrationForm(formID:1)
+  {
+    applicationsCount
+  }
+}`;
 
 class Registration extends React.Component {
   constructor(props) {
@@ -29,6 +36,7 @@ class Registration extends React.Component {
       errorText: '',
       successText: '',
       loading: false,
+      count: 0
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -79,6 +87,16 @@ class Registration extends React.Component {
     }
   }
 
+  getRegisteredCount = async() => {
+    const variables = {formID: 1}
+    const response = await dataFetch({ query: regquery, variables });
+    this.setState({count: response.data.registrationForm.applicationsCount})
+  }
+
+  componentDidMount() {
+    this.getRegisteredCount();
+  }
+
   render() {
     return (
       <section id="registration-form">
@@ -88,7 +106,8 @@ class Registration extends React.Component {
               backgroundImage: `url(${photo})`,
               backgroundPosition: 'bottom',
               backgroundRepeat: 'no-repeat',
-              objectFit: 'cover'
+              objectFit: 'fill',
+              backgroundSize: 'cover'
             }}
             className="col-md-6 p-0"
           />
@@ -96,7 +115,9 @@ class Registration extends React.Component {
             { !this.state.loading ?
               (
                 <div>
-                <h2 className="my-4 text-light">Register <span>Now</span></h2>
+                <h2 className="my-4 text-light">
+                  <span>{this.state.count}</span> Already Registered.<br />
+                  Register <span>Now</span></h2>
                   <p className="text-light">
                     Sign up for the meet-up for free by filling up the form below,
                     and make sure you do that fast as we have limited seats to fit you
