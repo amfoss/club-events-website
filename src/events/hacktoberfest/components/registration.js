@@ -92,8 +92,8 @@ class Registration extends React.Component {
 
   render() {
     return (
-      <section className="mx-4" id="registration-form">
-        <div className="row">
+      <section id="registration-form">
+        <div className="row m-0">
           <div
             style={{
               backgroundImage: `url(${photo})`,
@@ -156,7 +156,12 @@ class Registration extends React.Component {
                       <div className="m-2 text-light d-flex justify-content-center">
                         <div className="row m-0">
                           <div className="col-sm-1 col-2 d-flex justify-content-center align-items-center">
-                            <input type="checkbox" className="form-check-input" id="undertaking" onChange={this.handleCheckboxChange} />
+                            <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="undertaking"
+                                  onChange={() => this.handleCheckboxChange}
+                            />
                           </div>
                           <div className="col">
                             <label className="form-check-label" htmlFor="undertaking">
