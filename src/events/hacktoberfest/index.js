@@ -6,6 +6,7 @@ import Map from './components/map'
 import SEO from "../../components/seo"
 import Countdown from "./components/countdown"
 import Registration from "./components/registration"
+import Footer from "./components/footer"
 
 const Hacktoberfest = () => {
   return(
@@ -15,9 +16,7 @@ const Hacktoberfest = () => {
       <Countdown deadline='October 3, 2019'/>
       <Map/>
       <Registration />
-      <div>
-        <h1 className="py-4 my-4 text-light text-center">#OctoberIsComing</h1>
-      </div>
+      <Footer/>
     </>
   )
 }

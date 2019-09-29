@@ -87,9 +87,10 @@ class Registration extends React.Component {
             style={{
               backgroundImage: `url(${photo})`,
               backgroundPosition: 'bottom',
-              objectFit: 'fill'
+              backgroundRepeat: 'no-repeat',
+              objectFit: 'cover'
             }}
-            className="col-md-6"
+            className="col-md-6 p-0"
           />
           <div className="col-md-6 p-4 d-flex align-items-center">
             { !this.state.loading ?
@@ -101,6 +102,7 @@ class Registration extends React.Component {
                     and make sure you do that fast as we have limited seats to fit you
                     all in! Also, don't forget to bring in your friends as well :)
                   </p>
+                  <p style={{ color: 'red'}}>* Meetup only open for students of Amritapuri Campus</p>
                 <form
                   className="form-group"
                   onSubmit={e => {
@@ -142,7 +144,7 @@ class Registration extends React.Component {
                       <div className="m-2" />
                     </div>
                     <div className="col-12 form-check">
-                      <div className="m-2 text-light d-flex justify-content-center">
+                      <div className="m-2 text-light text-center d-flex justify-content-center">
                         <label className="form-check-label" htmlFor="undertaking">
                           By submitting this application, I agree to the <a href="#">Code of Conduct</a> & <a href="#">Privacy Policy</a> of the organizers.
                         </label>
