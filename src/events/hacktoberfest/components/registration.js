@@ -57,7 +57,7 @@ class Registration extends React.Component {
     const { name, email, phone, gender, roll, agreed, verified } = this.state;
     const emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     const phoneRegex = /^\d{10}$/;
-    const rollRegex = /^AM[.]EN[.]U4(CSE|CAI|ECE|EOC|EIC|EEE)[1][6-9][\d][\d][\d]$/;
+    const rollRegex = /^AM[.]EN[.]U4(CSE|AIE|ECE|EAC|ELC|EEE|ME)[1][6-9][\d][\d][\d]$/;
     if (name === '' || roll === '' || phone === '' || email === '' || gender === '') {
       this.setState({ loading: false, errorText: "Please Fill All the Fields" })
     } else if (emailRegex.test(email) === false) {
