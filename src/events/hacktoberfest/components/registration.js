@@ -117,6 +117,7 @@ class Registration extends React.Component {
                 <div>
                 <h2 className="my-4 text-light">
                   <span>{this.state.count}</span> Already Registered.<br />
+                  <span>{200-this.state.count}</span> Slots Left.<br />
                   Register <span>Now</span></h2>
                   <p className="text-light">
                     Sign up for the meet-up for free by filling up the form below,
@@ -191,7 +192,7 @@ class Registration extends React.Component {
                 </form>
                 </div>) : this.state.successText !== '' ? (<div className="alert alert-success">
                 Thank You! You have successfully signed up for the event.
-                See you at event, and dont forget to bring your friends as well!
+                We will get back to soon, meanwhile dont forget to bring your friends as well!
                 </div>) :
                 <div className="alert alert-warning">Submitting. Please Wait</div>
               }
