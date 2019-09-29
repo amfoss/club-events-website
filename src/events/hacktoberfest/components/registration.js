@@ -1,7 +1,6 @@
 import React from 'react'
 import dataFetch from "../../../utils/dataFetch"
-import { loadReCaptcha, ReCaptcha } from 'react-recaptcha-google'
-
+import photo from "../images/hacktober-amfoss.jpg"
 
 const query=`
   mutation submitApplication($name: String!, $email: String!, $phone: String!, $formData: JSONString!){
@@ -9,7 +8,7 @@ const query=`
     name: $name, 
     email: $email,
     phone: $phone,
-    formID: 1
+    formID: 1,
     formData: $formData
   )
   {
@@ -31,7 +30,7 @@ class Registration extends React.Component {
       successText: '',
       loading: false,
       agreed: false,
-      verified: false
+      verified: true //change it to false when captcha is enabled
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -39,10 +38,6 @@ class Registration extends React.Component {
     this.handleGenderChange = this.handleGenderChange.bind(this);
     this.handleRollChange = this.handleRollChange.bind(this);
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-  }
-
-  componentDidMount() {
-    loadReCaptcha();
   }
 
   handleNameChange(event) {
@@ -99,12 +94,24 @@ class Registration extends React.Component {
     return (
       <section className="mx-4" id="registration-form">
         <div className="row">
-          <div className="col-md-6" />
-          <div className="col-md-6 mb-md-0 mb-5">
+          <div
+            style={{
+              backgroundImage: `url(${photo})`,
+              backgroundPosition: 'bottom',
+              objectFit: 'fill'
+            }}
+            className="col-md-6"
+          />
+          <div className="col-md-6 p-4 d-flex align-items-center">
             { !this.state.loading ?
               (
-                <>
-                <h2 className="my-4 text-light">Register Now</h2>
+                <div>
+                <h2 className="my-4 text-light">Register <span>Now</span></h2>
+                  <p className="text-light">
+                    Sign up for the meet-up for free by filling up the form below,
+                    and make sure you do that fast as we have limited seats to fit you
+                    all in! Also, don't forget to bring in your friends as well :)
+                  </p>
                 <form
                   className="form-group"
                   onSubmit={e => {
@@ -113,7 +120,7 @@ class Registration extends React.Component {
                     e.preventDefault();
                 }}>
                   <div className="row">
-                    <div className="col-sm-6 p-0">
+                    <div className="col-12 p-0">
                       <div className="m-2">
                         <input type="text" placeholder="Enter Full Name" name="name" className="form-control" onChange={this.handleNameChange} />
                       </div>
@@ -135,20 +142,15 @@ class Registration extends React.Component {
                     </div>
                     <div className="col-sm-6 p-0">
                       <div className="m-2">
-                        <select placeholder="Select Gender" className="form-control text-light" onChange={this.handleGenderChange}>
+                        <select className="form-control text-light" onChange={this.handleGenderChange}>
+                          <option value="" hidden disabled selected>Select Gender</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
                         </select>
                       </div>
                     </div>
                     <div className="col-sm-6 p-0">
-                      <div className="m-2">
-                        <ReCaptcha
-                          render="explicit"
-                          sitekey="6Lem6roUAAAAAOfyK_Ag-FFGMD-IgSEg9qHfsb51"
-                          verifyCallback={() => this.setState({ verified: true})}
-                        />
-                      </div>
+                      <div className="m-2" />
                     </div>
                     <div className="col-12 form-check">
                       <div className="m-2 text-light d-flex justify-content-center">
@@ -182,7 +184,7 @@ class Registration extends React.Component {
                     </div>
                   </div>
                 </form>
-                </>) : this.state.successText !== '' ? (<div className="alert alert-success">
+                </div>) : this.state.successText !== '' ? (<div className="alert alert-success">
                 Thank You! You have successfully signed up for the event.
                 See you at event, dont forget to bring your friends as well!
                 </div>) :
