@@ -1,7 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import Cookies from 'universal-cookie';
-
-const cookies = new Cookies();
 
 const API_URL = 'https://api.amfoss.in/';
 
@@ -11,13 +8,10 @@ export default ({ query, variables }) => {
     variables,
   };
 
-  const token = cookies.get('token');
-
   const apiConfig = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `JWT ${token}`,
     },
     body: JSON.stringify(body),
   };
