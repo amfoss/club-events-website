@@ -12,6 +12,7 @@ const query=`
   )
   {
     id
+    status
   }
 }
 `;
@@ -28,7 +29,8 @@ class Registration extends React.Component {
       errorText: '',
       successText: '',
       loading: false,
-      count: 0
+      count: 0,
+      status: ''
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -74,7 +76,7 @@ class Registration extends React.Component {
       if (Object.prototype.hasOwnProperty.call(response, 'errors')) {
         this.setState({ loading: false, errorText: response.errors[0].message});
       } else {
-        this.setState({ successText: response.data.id, errorText: '' })
+        this.setState({ successText: response.data.submitApplication.id, errorText: '', status: response.data.submitApplication.status })
       }
     }
   }
@@ -160,10 +162,15 @@ class Registration extends React.Component {
                       </div>
                     </div>
                   </form>
-                </div>) : this.state.successText !== '' ? (<div className="alert alert-success">
-                  Thank You! You have successfully signed up for the event.
-                  We will get back to soon, meanwhile dont forget to bring your friends as well!
-                </div>) :
+                </div>) : this.state.successText !== '' ?
+                this.state.status === "U" ?
+                  (<div className="alert alert-success">
+                    <h5>Thank You! Your application is Under Review.</h5>
+                    We will get back to soon, meanwhile dont forget to bring your friends as well!
+                  </div>) : (<div className="alert alert-warning">
+                    <h5>Thank You! Your application has been Wait listed.</h5>
+                    Sorry, we might not be able to accommodate everyone this time, stay tuned for more events.
+                  </div> ):
                 <div className="alert alert-warning">Submitting. Please Wait</div>
             }
           </div>

@@ -83,7 +83,7 @@ class Registration extends React.Component {
       if (Object.prototype.hasOwnProperty.call(response, 'errors')) {
         this.setState({ loading: false, errorText: response.errors[0].message});
       } else {
-        this.setState({ successText: response.data.id, errorText: '' })
+        this.setState({ successText: response.data.submitApplication.id, errorText: '' })
       }
     }
   }
@@ -118,7 +118,7 @@ class Registration extends React.Component {
                 <div>
                 <h2 className="my-4 text-light">
                   <span>{this.state.count}</span> Already Registered.<br />
-                  <span>{this.state.slotsLeft>=0 ? this.state.slotsLeft: 0}</span> Slots Left.<br />
+                  {this.state.count < 200 ? <><span>{this.state.slotsLeft>=0 ? this.state.slotsLeft: 0}</span> Slots Left.<br /></>: <span>Join the WaitList</span>}
                   Register <span>Now</span></h2>
                   <p className="text-light">
                     Sign up for the meet-up for free by filling up the form below,
