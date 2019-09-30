@@ -37,7 +37,7 @@ class Registration extends React.Component {
       successText: '',
       loading: false,
       count: 0,
-      slotsLeft: 200
+      slotsLeft: 250
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -91,7 +91,7 @@ class Registration extends React.Component {
   getRegisteredCount = async() => {
     const variables = {formID: 1}
     const response = await dataFetch({ query: regquery, variables });
-    this.setState({count: response.data.registrationForm.applicationsCount, slotsLeft: 200-response.data.registrationForm.applicationsCount})
+    this.setState({count: response.data.registrationForm.applicationsCount, slotsLeft: 250-response.data.registrationForm.applicationsCount})
   }
 
   componentDidMount() {
@@ -118,7 +118,7 @@ class Registration extends React.Component {
                 <div>
                 <h2 className="my-4 text-light">
                   <span>{this.state.count}</span> Already Registered.<br />
-                  {this.state.count < 200 ? <><span>{this.state.slotsLeft>=0 ? this.state.slotsLeft: 0}</span> Slots Left.<br /></>: <span>Join the WaitList</span>}
+                  {this.state.count < 250 ? <><span>{this.state.slotsLeft>=0 ? this.state.slotsLeft: 0}</span> Slots Left.<br /></>: <><span> Join the WaitList</span><br/></>}
                   Register <span>Now</span></h2>
                   <p className="text-light">
                     Sign up for the meet-up for free by filling up the form below,

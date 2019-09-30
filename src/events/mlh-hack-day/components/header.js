@@ -1,13 +1,67 @@
 import React from "react"
 import amFOSSLogo from "../../../images/amfoss_logo.png"
 import amritaLogo from "../../../images/amrita_logo.png"
-import MLH from "../images/local-hack-day.png"
 import LocalHackDay from "../images/localhackday.svg"
+import Particles from "react-particles-js"
 
 const Header = () => {
   return (
     <>
       <div id="header-area">
+        <Particles
+          canvasClassName="particleBg"
+          params={{
+            "particles": {
+              "number": {
+                "value": 400,
+                "density": {
+                  "enable": false
+                }
+              },
+              "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                  "speed": 10,
+                  "size_min": 0.3
+                }
+              },
+              "line_linked": {
+                "enable": false
+              },
+              "move": {
+                "random": true,
+                "speed": 3,
+                "direction": "down",
+                "out_mode": "out"
+              }
+            },
+            "interactivity": {
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "bubble"
+                },
+                "onclick": {
+                  "enable": true,
+                  "mode": "repulse"
+                }
+              },
+              "modes": {
+                "bubble": {
+                  "distance": 50,
+                  "duration": 2,
+                  "size": 0,
+                  "opacity": 0
+                },
+                "repulse": {
+                  "distance": 40,
+                  "duration": 4
+                }
+              }
+            }
+          }}
+        />
         <div id="top-bar" className="row m-0 p-4">
           <div className="col-6">
             <a href="https://amfoss.in">

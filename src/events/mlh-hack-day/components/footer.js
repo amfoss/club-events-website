@@ -1,28 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
+import Github from '../images/github.png'
+import MLH from "../images/mlh-logo-white.png"
 
-
-
-const Footer = () => (
-  <div id="footer">
-    <div className="row m-0">
-      <div className="col-md-4">
-
-      </div>
-      <div className="col-12 col-md-4">
-        &copy; Team amFOSS 2019.
-      </div>
-
-      <div className="col-md-4">
-        <div id="footer-menu">
-          <a href="/schedule">Privacy</a>
-          <a href="/schedule">Feedback</a>
-          <a href="/schedule">Code of conduct</a>
+const Footer = () => {
+  return(
+    <>
+      <div className="py-4 text-center text-light">Thank You</div>
+      <div id="footer-logos" className="row m-0">
+        <div className="container d-flex justify-content-center">
+          <a href="https://mlh.io/">
+            <img className="p-2" src={MLH} alt="MLH" />
+          </a>
+          <a href="https://github.com/">
+            <img className="px-2" src={Github} alt="Github" />
+          </a>
         </div>
       </div>
-    </div>
-  </div>
-);
+    </>
+  )
+}
 
 export default Footer
-

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import './styles/style.sass'
 
 import Header from './components/header'
@@ -13,7 +13,7 @@ const Hacktoberfest = () => {
     <>
       <SEO title="Hacktoberfest 2019 - Meetup & BootCamp | Amritapuri | October 3" />
       <Header/>
-      <Countdown deadline='October 3, 2019'/>
+      <Countdown deadline='October 9, 2019'/>
       <Map/>
       <Registration />
       <Footer/>

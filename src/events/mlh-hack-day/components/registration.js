@@ -16,6 +16,14 @@ const query=`
   }
 }
 `;
+const regquery = `
+{
+  registrationForm(formID:2)
+  {
+    applicationsCount
+  }
+}`;
+
 
 class Registration extends React.Component {
   constructor(props) {
@@ -30,7 +38,8 @@ class Registration extends React.Component {
       successText: '',
       loading: false,
       count: 0,
-      status: ''
+      status: '',
+      slotsLeft: 60
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -59,7 +68,7 @@ class Registration extends React.Component {
     const { name, email, phone, gender, roll, agreed, verified } = this.state;
     const emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     const phoneRegex = /^\d{10}$/;
-    const rollRegex = /^AM[.]EN[.]U4(CSE|AIE|ECE|EAC|ELC|EEE|ME)[1][6-9][\d][\d][\d]$/;
+    const rollRegex = /^AM[.]EN[.](U3|U4)(CSE|AIE|ECE|EAC|ELC|EEE|ME|BCA)[1][6-9][\d][\d][\d]$/;
     if (name === '' || roll === '' || phone === '' || email === '' || gender === '') {
       this.setState({ loading: false, errorText: "Please Fill All the Fields" })
     } else if (emailRegex.test(email) === false) {
@@ -81,6 +90,17 @@ class Registration extends React.Component {
     }
   }
 
+  getRegisteredCount = async() => {
+    const variables = {formID: 1}
+    const response = await dataFetch({ query: regquery, variables });
+    this.setState({count: response.data.registrationForm.applicationsCount, slotsLeft: 60-response.data.registrationForm.applicationsCount})
+  }
+
+  componentDidMount() {
+    this.getRegisteredCount();
+  }
+
+
   render() {
     return (
       <section id="registration-form">
@@ -90,6 +110,8 @@ class Registration extends React.Component {
               (
                 <div>
                   <h2 className="my-4 text-light">
+                    <span>{this.state.count}</span> Already Registered.<br />
+                    {this.state.count < 60 ? <><span>{this.state.slotsLeft>=0 ? this.state.slotsLeft: 0}</span> Slots Left.<br /></>: <><span> Join the WaitList</span><br/></>}
                     Register <span>Now</span></h2>
                   <p className="text-light">
                     Sign up for the MLH Local Hack Day: Learn for free by filling up the form below,
