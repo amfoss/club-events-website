@@ -82,20 +82,19 @@ class Registration extends React.Component {
   render() {
     return (
       <section id="registration-form">
-        <div className="row m-0">
-          <div className="col-md-6 p-0"/>
-          <div className="col-md-6 p-4 d-flex align-items-center">
+        <div className="row m-0 d-flex justify-content-center">
+          <div className="col-md-8 col-lg-6 p-4 d-flex align-items-center">
             { !this.state.loading ?
               (
                 <div>
                   <h2 className="my-4 text-light">
                     Register <span>Now</span></h2>
                   <p className="text-light">
-                    Sign up for the meet-up for free by filling up the form below,
-                    and make sure you do that fast as we have limited seats to fit you
+                    Sign up for the MLH Local Hack Day: Learn for free by filling up the form below,
+                    and make sure you do that fast as we have very limited seats to fit you
                     all in! Also, don't forget to bring in your friends as well :)
                   </p>
-                  <p style={{ color: 'red'}}>* Meetup only open for students of Amritapuri Campus</p>
+                  <p style={{ color: 'yellow'}}>* Meetup only open for students of Amritapuri Campus</p>
                   <form
                     className="form-group"
                     onSubmit={e => {
