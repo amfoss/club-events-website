@@ -7,6 +7,7 @@ import SEO from "../../components/seo"
 import Countdown from "./components/countdown"
 import Registration from "./components/registration"
 import Footer from "./components/footer"
+import LearnMore from "./components/learnmore"
 
 const Hacktoberfest = () => {
   return(
@@ -14,6 +15,7 @@ const Hacktoberfest = () => {
       <SEO title="Hacktoberfest 2019 - Meetup & BootCamp | Amritapuri | October 3" />
       <Header/>
       <Countdown deadline='October 9, 2019'/>
+      <LearnMore/>
       <Map/>
       <Registration />
       <Footer/>
