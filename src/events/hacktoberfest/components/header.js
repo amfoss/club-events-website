@@ -88,7 +88,7 @@ const Header = () => {
                 <div className="d-flex align-items-center text-lg-left text-center justify-content-center h-100">
                   <div>
                     <h1>Amritapuri</h1>
-                    <h3>October 3, 3PM - 9PM</h3>
+                    <h3>October 9 & 10, 4PM - 9PM</h3>
                     <button className="button">
                       <a href="#registration-form" style={{color: 'black', textDecoration: 'none'}}>REGISTER NOW</a>
                     </button>
