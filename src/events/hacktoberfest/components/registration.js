@@ -50,16 +50,16 @@ class Registration extends React.Component {
     this.setState({ name: event.target.value });
   }
   handleEmailChange(event) {
-    this.setState({ email: event.target.value });
+    this.setState({ email: event.target.value.trim() });
   }
   handlePhoneChange(event) {
-    this.setState({ phone: event.target.value });
+    this.setState({ phone: event.target.value.trim() });
   }
   handleGenderChange(event) {
     this.setState({ gender: event.target.value });
   }
   handleRollChange(event) {
-    this.setState({ roll: event.target.value });
+    this.setState({ roll: event.target.value.trim() });
   }
 
   register = async() => {

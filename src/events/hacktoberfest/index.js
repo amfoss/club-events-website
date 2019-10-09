@@ -28,7 +28,7 @@ const Hacktoberfest = () => {
 
   return (
     <>
-      <SEO title="Hacktoberfest 2019 - Meetup & BootCamp | Amritapuri | October 3" />
+      <SEO title="Hacktoberfest 2019 - Meetup & BootCamp | Amritapuri | October 9th & 10th" />
       { hash === undefined ? (
         <>
           <Header/>
