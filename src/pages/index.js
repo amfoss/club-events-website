@@ -3,7 +3,7 @@ import { navigate } from "gatsby"
 
 const IndexPage = () => {
   useEffect(() => {
-    navigate('/mlh/')
+    navigate('/mlh/build/')
   }, [])
   return null;
 }
