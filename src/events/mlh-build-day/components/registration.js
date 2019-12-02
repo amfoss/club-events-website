@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import dataFetch from "../../../utils/dataFetch"
+import BuildDayImg from "../images/registration.png" 
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -61,7 +62,9 @@ const Registration = () => {
   return (
     <section id="registration-form">
       <div className="row m-0">
-        <div className="col-md-2" />
+        <div className="col-md-4 p-4" style={{marginTop: '5%'}}>
+          <img src={BuildDayImg} alt="Build Day" />
+        </div>
         <div className="col-md-8 p-4 d-flex align-items-center">
           { !loading ?
             (
