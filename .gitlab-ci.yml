@@ -1,0 +1,15 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  script:
+    - yarn install
+    - ./node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
