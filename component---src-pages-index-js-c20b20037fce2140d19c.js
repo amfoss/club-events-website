@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{RXBc:function(n,t,c){"use strict";c.r(t);var e=c("q1tI"),u=c("Wbzz");t.default=function(){return Object(e.useEffect)((function(){Object(u.navigate)("/mlh/build/")}),[]),null}}}]);
+//# sourceMappingURL=component---src-pages-index-js-c20b20037fce2140d19c.js.map
